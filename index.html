@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPL Career - Road to Glory | kpl-career.vercel.app</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050810;color:#fff;font-family:Inter,sans-serif;padding-bottom:85px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#0a0f1e;border-bottom:1px solid #1e293b;font-size:12px;position:sticky;top:0;z-index:10}
+.topbar a{color:#94a3b8;text-decoration:none}
+.topbar .admin{color:#fbbf24}
+.page{display:none}.page.active{display:block}
+.hero{text-align:center;padding:28px 20px 10px;background:radial-gradient(circle at 50% 0%,#3b0a0a 0%,#050810 65%)}
+.badge{font-size:10px;letter-spacing:2px;color:#fbbf24;border:1px solid #f59e0b;padding:4px 10px;border-radius:20px}
+.hero h1{font-family:Oswald,sans-serif;font-size:58px;line-height:.9;margin:14px 0 4px;background:linear-gradient(180deg,#fde68a,#f59e0b,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h2{font-size:26px;letter-spacing:1px}
+.hero p{color:#94a3b8;font-size:13px;margin:12px 0}
+.hero-stats{display:flex;justify-content:center;gap:18px;margin:16px 0;font-size:11px;color:#cbd5e1}
+.hero-stats b{color:#fff;display:block;font-size:15px}
+.card{margin:14px 16px;background:#0b1226;border:1px solid #1e293b;border-radius:14px;padding:18px}
+.card .label{font-size:10px;letter-spacing:2px;color:#f59e0b}
+.card h3{font-size:18px;margin:6px 0}
+.card p{font-size:13px;color:#94a3b8;line-height:1.5}
+.card ul{list-style:none;margin:12px 0}
+.card li{font-size:12.5px;padding:5px 0}
+.card li::before{content:"✓ ";color:#22c55e}
+.btn{display:inline-block;margin-top:8px;color:#fbbf24;font-size:12px;font-weight:700;text-decoration:none;cursor:pointer}
+.btn-solid{background:linear-gradient(90deg,#ef4444,#f97316);color:#fff;padding:10px 22px;border-radius:20px;font-size:13px;text-decoration:none;display:inline-block}
+.btn-ghost{border:1px solid #334155;color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;text-decoration:none;display:inline-block}
+.journey{margin:14px 16px}.journey h3{font-size:20px}.journey p{font-size:13px;color:#94a3b8;margin:8px 0 14px}
+.journey-item{background:#0b1226;border:1px solid #1e293b;border-radius:12px;padding:14px;margin-bottom:10px}
+.journey-item b{font-size:14px}.journey-item span{font-size:12px;color:#94a3b8;display:block;margin-top:4px}
+.cta{margin:18px 16px;background:radial-gradient(circle at 50% 0%,#1e0a0a,#0b1226);border:1px solid #334155;border-radius:14px;padding:22px;text-align:center}
+.cta h3{font-size:19px}.cta p{font-size:12px;color:#94a3b8;margin:8px 0 16px}.cta-row{display:flex;gap:10px;justify-content:center}
+.page-head{padding:20px 16px 4px}.page-head h2{font-size:24px}.page-head p{font-size:12px;color:#94a3b8;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:13px}th{color:#94a3b8;font-size:11px;text-align:left;padding:10px 8px;border-bottom:1px solid #1e293b}td{padding:11px 8px;border-bottom:1px solid #16203a}
+.team{display:flex;align-items:center;gap:8px;font-weight:700}.dot{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#dc2626);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
+.fixture{background:#0b1226;border:1px solid #1e293b;border-radius:14px;margin:12px 16px;padding:16px;display:flex;justify-content:space-between;align-items:center}
+.fixture b{font-size:16px}.fixture span{font-size:11px;color:#94a3b8;display:block}.fixture .vs{color:#f59e0b;font-weight:800}
+input,select{width:100%;background:#050810;border:1px solid #334155;color:#fff;padding:11px;border-radius:10px;margin:8px 0}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#0a0f1e;border-top:1px solid #1e293b;display:flex;justify-content:space-around;padding:10px 0;font-size:10px;color:#94a3b8;z-index:20}
+.bottom div{cursor:pointer;text-align:center}.bottom div.active{color:#f59e0b}.bottom b{color:#fff;display:block;font-size:11px}
+.version{text-align:center;font-size:10px;color:#475569;padding:10px}
+</style>
+</head>
+<body>
+<div class="topbar"><a href="#" onclick="show('home')">← Back to Portal</a><span>KPL</span><a class="admin" href="#">★ Admin Console</a></div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+<div class="hero"><span class="badge">★ KPL CAREER TOUR MODE</span><h1>KPL</h1><h2>ROAD TO GLORY</h2><p>Manage your squad, outwit your rivals, and build your legacy across every KPL season.</p><div class="hero-stats"><span><b>10</b>Teams</span><span><b>587</b>Players</span><span><b>Season 2 Active</b></span></div></div>
+<div class="card"><div class="label">✦ NOTICE</div><h3>TOURNAMENT GUIDE</h3><p>Learn the KPL rules, rewards and how to earn your place in the KPL Career Tour.</p><ul><li>Official Regulations</li><li>Prize Pool & Rewards</li><li>Rules of Conduct</li></ul><a class="btn" onclick="show('league')">View Guide →</a></div>
+<div class="card"><div class="label">✦ MARKET</div><h3>CAREER MODE</h3><p>Manage your KPL squad, sign new players, negotiate contracts, and scout future stars.</p><ul><li>Squad Management</li><li>Transfer Window</li><li>Player Profiles</li></ul><a class="btn" onclick="show('league')">Enter Market →</a></div>
+<div class="card"><div class="label">✦ RANKS</div><h3>MANAGER RANKINGS</h3><p>Live KPL Season 2 standings for all 10 teams.</p><ul><li>BHFC • OGX • PHNX • WOLS • IFC</li><li>SCOF • MFC • FFC • EFC • IGN</li></ul><a class="btn" onclick="show('league')">View Rankings →</a></div>
+<div class="card"><div class="label">✦ LEGACY</div><h3>TROPHY CABINET</h3><p>Showcase your KPL achievements, league titles, and career awards.</p><ul><li>Championship Awards</li><li>Season Records</li><li>Career Milestones</li></ul><a class="btn" onclick="show('league')">View Cabinet →</a></div>
+<div class="card"><div class="label">✦ CHAMPIONSHIP</div><h3>KPL TOURNAMENT</h3><p>Round 13 is live. Submit lineups and scores.</p><ul><li>Match Fixtures - Round 13</li><li>Submit Lineup</li><li>Submit Scores</li></ul><a class="btn" onclick="show('matches')">Enter Arena →</a></div>
+<div class="journey"><h3>Your Road to Glory Journey</h3><p>Welcome to KPL Career — the premier virtual football manager simulation. Compete in elite KPL leagues and lead your squad to the top tier.</p><div class="journey-item"><b>🏆 Tournaments</b><span>Compete in KPL tournaments with various formats and claim rewards.</span></div><div class="journey-item"><b>📈 Progression</b><span>Track your manager skills with detailed statistics and progression metrics.</span></div></div>
+<div class="cta"><h3>Ready to Begin Your Journey?</h3><p>Join active KPL managers competing in tournaments and building elite squads today.</p><div class="cta-row"><a class="btn-solid" onclick="show('matches')">▶ Start Now</a><a class="btn-ghost" onclick="show('home')">← Return to Portal</a></div></div>
+</div>
+
+<!-- LEAGUE / RANKINGS -->
+<div id="league" class="page">
+<div class="page-head"><h2>KPL League Table</h2><p>Season 2 • Manager Rankings • All 10 Teams</p></div>
+<div class="card" style="padding:8px 10px"><table><tr><th>#</th><th>TEAM</th><th>P</th><th>W</th><th>Pts</th></tr>
+<tr><td>1</td><td><div class="team"><span class="dot">BH</span>BHFC</div></td><td>12</td><td>8</td><td><b>26</b></td></tr>
+<tr><td>2</td><td><div class="team"><span class="dot">OG</span>OGX</div></td><td>12</td><td>7</td><td><b>23</b></td></tr>
+<tr><td>3</td><td><div class="team"><span class="dot">PH</span>PHNX</div></td><td>12</td><td>7</td><td><b>22</b></td></tr>
+<tr><td>4</td><td><div class="team"><span class="dot">WO</span>WOLS</div></td><td>12</td><td>6</td><td><b>20</b></td></tr>
+<tr><td>5</td><td><div class="team"><span class="dot">IF</span>IFC</div></td><td>12</td><td>6</td><td><b>19</b></td></tr>
+<tr><td>6</td><td><div class="team"><span class="dot">SC</span>SCOF</div></td><td>12</td><td>5</td><td><b>17</b></td></tr>
+<tr><td>7</td><td><div class="team"><span class="dot">MF</span>MFC</div></td><td>12</td><td>5</td><td><b>16</b></td></tr>
+<tr><td>8</td><td><div class="team"><span class="dot">FF</span>FFC</div></td><td>12</td><td>4</td><td><b>14</b></td></tr>
+<tr><td>9</td><td><div class="team"><span class="dot">EF</span>EFC</div></td><td>12</td><td>4</td><td><b>13</b></td></tr>
+<tr><td>10</td><td><div class="team"><span class="dot">IG</span>IGN</div></td><td>12</td><td>3</td><td><b>11</b></td></tr>
+</table><p style="font-size:11px;color:#64748b;padding:8px">* Edit points in code to update after Round 13. Top 4 = Championship Zone.</p></div>
+<div class="card"><h3>Top Managers</h3><p>1. BHFC Manager — 26 pts<br>2. OGX Manager — 23 pts<br>3. PHNX Manager — 22 pts</p></div>
+</div>
+
+<!-- MATCHES / TOURNAMENT -->
+<div id="matches" class="page">
+<div class="page-head"><h2>KPL Tournament</h2><p>Round 13 Fixtures • Season 2 • Submit Lineup & Scores</p></div>
+<div class="fixture"><div><b>BHFC</b><span>Home</span></div><div class="vs">VS</div><div style="text-align:right"><b>OGX</b><span>Away</span></div></div>
+<div class="fixture"><div><b>PHNX</b><span>Home</span></div><div class="vs">VS</div><div style="text-align:right"><b>WOLS</b><span>Away</span></div></div>
+<div class="fixture"><div><b>IFC</b><span>Home</span></div><div class="vs">VS</div><div style="text-align:right"><b>SCOF</b><span>Away</span></div></div>
+<div class="fixture"><div><b>MFC</b><span>Home</span></div><div class="vs">VS</div><div style="text-align:right"><b>FFC</b><span>Away</span></div></div>
+<div class="fixture"><div><b>EFC</b><span>Home</span></div><div class="vs">VS</div><div style="text-align:right"><b>IGN</b><span>Away</span></div></div>
+<div class="card"><h3>Submit Lineup / Score</h3><select><option>Select Your Team</option><option>BHFC</option><option>OGX</option><option>PHNX</option><option>WOLS</option><option>IFC</option><option>SCOF</option><option>MFC</option><option>FFC</option><option>EFC</option><option>IGN</option></select><input placeholder="Starting XI - e.g. GK, DEF, MID, FWD"><input placeholder="Score - e.g. BHFC 2-1 OGX"><a class="btn-solid" onclick="alert('Submitted! Admin will verify.')">Submit to Admin →</a></div>
+</div>
+
+<!-- CAREER -->
+<div id="career" class="page">
+<div class="page-head"><h2>KPL Career Mode</h2><p>Your squad, transfers & trophy cabinet</p></div>
+<div class="card"><h3>🏆 Trophy Cabinet</h3><p>Season 1 Champion: —<br>Season 2 Leader: BHFC<br>Your Trophies: 0 — Win Round 13 to climb!</p></div>
+<div class="card"><h3>💰 Transfer Market</h3><p>Budget: 100M • Squad: 23 Players<br>Top Available: Striker 89 OVR, Midfielder 87 OVR, GK 88 OVR</p><a class="btn" href="#">Browse Players →</a></div>
+</div>
+
+<div class="version">KPL • SEASON 2 • kpl-career.vercel.app</div>
+<div class="bottom">
+<div onclick="show('home')" id="b-home" class="active"><b>⌂</b>PORTAL</div>
+<div onclick="show('career')" id="b-career"><b>★</b>CAREER</div>
+<div onclick="show('league')" id="b-league"><b>⚽</b>LEAGUE</div>
+<div onclick="show('matches')" id="b-matches"><b>🏆</b>MATCHES</div>
+</div>
+<script>
+function show(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.bottom div').forEach(b=>b.classList.remove('active'));
+ var b=document.getElementById('b-'+id); if(b) b.classList.add('active');
+ window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
